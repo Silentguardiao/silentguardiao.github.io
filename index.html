@@ -6,63 +6,68 @@
   <title>Silent Guardião</title>
   <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Averia Serif Libre', serif;
+      background-color: #000;
+      color: #fff;
     }
 
     header {
+      position: relative;
+      height: 100vh;
+      background-image: url('9cb97a77-915a-4f8c-8f31-cd0daaf07b11.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+    }
+
+    header h1 {
+      font-size: 3rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      font-style: italic;
+    }
+
+    nav {
       position: absolute;
       top: 0;
       width: 100%;
-      z-index: 10;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 20px 0;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 15px 0;
       text-align: center;
     }
 
     nav a {
-      color: white;
+      color: #ccc;
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
     }
 
-    .hero {
-      background-image: url('9cb97a77-915a-4f8c-8f31-cd0daaf07b11.png');
-      background-size: cover;
-      background-position: center top;
-      background-repeat: no-repeat;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-shadow: 1px 1px 8px black;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      font-style: italic;
-    }
-
     main {
-      background-color: white;
-      color: #111;
+      background-color: #000;
+      padding: 60px 20px;
       text-align: center;
-      padding: 80px 20px;
     }
 
     main h2 {
       font-size: 2rem;
-      margin-bottom: 10px;
+      margin-bottom: 20px;
     }
 
     main p {
@@ -74,28 +79,26 @@
     footer {
       text-align: center;
       padding: 20px;
-      background-color: #f1f1f1;
-      color: #444;
+      background-color: #1a1a1a;
       font-size: 0.9em;
+      color: #777;
     }
   </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="index.html">Início</a>
-      <a href="sobre.html">Sobre</a>
-      <a href="opinioes.html">Opiniões</a>
-      <a href="contacto.html">Contacto</a>
-      <a href="galeria.html">Galeria</a>
-    </nav>
-  </header>
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="opinioes.html">Opiniões</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="galeria.html">Galeria</a>
+  </nav>
 
-  <div class="hero">
+  <header>
     <h1>Silent Guardião</h1>
     <p>O herói nasce no silêncio. Mas as sombras falam por ele.</p>
-    <p>"Entre a sombra e o silêncio... nasce a justiça."</p>
-  </div>
+    <p><em>"Entre a sombra e o silêncio... nasce a justiça."</em></p>
+  </header>
 
   <main>
     <h2>Bem-vindo ao universo do Guardião</h2>
