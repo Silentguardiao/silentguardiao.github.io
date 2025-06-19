@@ -4,18 +4,66 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Silent Guardião</title>
+  <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre&display=swap" rel="stylesheet">
   <style>
-    body {
+    * {
+      font-family: 'Averia Serif Libre', serif;
       margin: 0;
-      font-family: "Segoe UI", sans-serif;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       background-color: #111;
-      color: #ccc;
+      color: #eee;
+    }
+
+    header {
+      background-image: url('9cb97a77-915a-4f8c-8f31-cd0daaf07b11.png');
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      min-height: 75vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      position: relative;
+      padding: 40px 20px;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    header h1, header p {
+      position: relative;
+      z-index: 1;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-style: italic;
+      font-size: 1.2rem;
+      color: #ddd;
     }
 
     nav {
-      background-color: #1a1a1a;
+      background-color: #000;
+      padding: 10px;
       text-align: center;
-      padding: 10px 0;
     }
 
     nav a {
@@ -27,57 +75,34 @@
 
     nav a:hover {
       color: #fff;
-    }
-
-    .parallax {
-      background-image: url('9cb97a77-915a-4f8c-8f31-cd0daaf07b11.png');
-      min-height: 450px;
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      position: relative;
-    }
-
-    .parallax .overlay {
-      background-color: rgba(0, 0, 0, 0.6);
-      color: white;
-      text-align: center;
-      padding: 100px 20px;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .parallax h1 {
-      font-size: 3em;
-      margin-bottom: 10px;
-    }
-
-    .parallax p {
-      font-size: 1.2em;
-      font-style: italic;
+      text-decoration: underline;
     }
 
     main {
-      text-align: center;
       padding: 40px 20px;
+      text-align: center;
     }
 
     h2 {
-      color: #fff;
-      margin-top: 40px;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      color: #ccc;
     }
 
     .botao {
-      padding: 12px 28px;
       background-color: #007bff;
       color: white;
+      padding: 12px 24px;
       border: none;
       border-radius: 6px;
-      font-size: 1em;
+      font-size: 1rem;
       cursor: pointer;
+      margin: 10px;
     }
 
     .botao:hover {
@@ -85,9 +110,9 @@
     }
 
     .mensagem {
-      margin-top: 20px;
-      font-weight: bold;
       color: #00cc00;
+      font-weight: bold;
+      margin-top: 10px;
     }
 
     footer {
@@ -95,13 +120,12 @@
       padding: 20px;
       background-color: #1a1a1a;
       color: #777;
-      font-size: 0.9em;
+      font-size: 0.9rem;
     }
   </style>
 </head>
-<body>
 
-  <!-- MENU -->
+<body>
   <nav>
     <a href="index.html">Início</a>
     <a href="sobre.html">Sobre</a>
@@ -110,46 +134,45 @@
     <a href="galeria.html">Galeria</a>
   </nav>
 
-  <!-- PARALLAX TOPO -->
-  <section class="parallax">
-    <div class="overlay">
-      <h1>Silent Guardião</h1>
-      <p>O herói nasce no silêncio. Mas as sombras falam por ele.</p>
-    </div>
-  </section>
+  <header>
+    <h1>Silent Guardião</h1>
+    <p>O herói nasce no silêncio. Mas as sombras falam por ele.</p>
+    <p>"Entre a sombra e o silêncio... nasce a justiça."</p>
+  </header>
 
-  <!-- CONTEÚDO PRINCIPAL -->
   <main>
-    <h2>Bem-vindo ao universo do Guardião</h2>
-    <p>Este é o espaço oficial do livro <strong>Silent Guardião</strong>. Aqui podes conhecer a história, partilhar a tua opinião e adquirir o livro.</p>
+    <section>
+      <h2>Bem-vindo ao universo do Guardião</h2>
+      <p>Este é o espaço oficial do livro <strong>Silent Guardião</strong>. Aqui podes conhecer a história, partilhar a tua opinião e adquirir o livro.</p>
 
-    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-      <input type="hidden" name="cmd" value="_xclick">
-      <input type="hidden" name="business" value="nunofilipe--1988@hotmail.com">
-      <input type="hidden" name="item_name" value="Livro Silent Guardião - Versão Digital">
-      <input type="hidden" name="currency_code" value="EUR">
-      <input type="hidden" name="amount" value="10.00">
-      <input type="submit" class="botao" value="Comprar o Livro por 10€">
-    </form>
+      <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+        <input type="hidden" name="cmd" value="_xclick">
+        <input type="hidden" name="business" value="nunofilipe--1988@hotmail.com">
+        <input type="hidden" name="item_name" value="Livro Silent Guardião – Versão Digital">
+        <input type="hidden" name="currency_code" value="EUR">
+        <input type="hidden" name="amount" value="10.00">
+        <input type="submit" class="botao" value="Comprar o Livro por 10€">
+      </form>
 
-    <p class="mensagem">Obrigado por apoiar o Guardião!</p>
+      <p class="mensagem">Obrigado por apoiar o Guardião!</p>
+    </section>
 
-    <h2>Doação Solidária</h2>
-    <p>Queres ajudar na luta contra o cancro? Junta-te ao Guardião nesta causa.</p>
+    <section style="margin-top: 60px;">
+      <h2>Doação Solidária</h2>
+      <p>Queres ajudar na luta contra o cancro? Junta-te ao Guardião nesta causa.</p>
 
-    <form action="https://www.paypal.com/donate" method="post" target="_blank">
-      <input type="hidden" name="business" value="nunofilipe--1988@hotmail.com">
-      <input type="hidden" name="currency_code" value="EUR">
-      <input type="submit" class="botao" value="Fazer Doação Solidária">
-    </form>
+      <form action="https://www.paypal.com/donate" method="post" target="_blank">
+        <input type="hidden" name="business" value="nunofilipe--1988@hotmail.com">
+        <input type="hidden" name="currency_code" value="EUR">
+        <input type="submit" class="botao" value="Fazer Doação Solidária">
+      </form>
 
-    <p class="mensagem">Obrigado por apoiar esta causa nobre.</p>
+      <p class="mensagem">Obrigado por apoiar esta causa nobre.</p>
+    </section>
   </main>
 
-  <!-- RODAPÉ -->
   <footer>
     © 2025 Silent Guardião. Todos os direitos reservados.
   </footer>
-
 </body>
 </html>
