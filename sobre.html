@@ -1,29 +1,105 @@
-
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <title>Sobre o Guardião</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre – Silent Guardião</title>
+  <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Averia Serif Libre', serif;
+      background-color: #111;
+      color: #fff;
+    }
+
+    header {
+      background-color: #000;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #ccc;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      background-image: url('9cb97a77-915a-4f8c-8f31-cd0daaf07b11.png');
+      background-size: cover;
+      background-position: center;
+      height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: white;
+      padding: 40px;
+      max-width: 800px;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #1a1a1a;
+      font-size: 0.9em;
+      color: #777;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Silent Guardião</h1>
-        <nav>
-            <a href="index.html">Início</a>
-            <a href="sobre.html">Sobre</a>
-            <a href="opinioes.html">Opiniões</a>
-            <a href="contacto.html">Contacto</a>
-        </nav>
-    </header>
-    <main>
-        <h2>Quem é o Silent Guardião?</h2>
-        <p>Um homem marcado pelo passado. Um corpo forjado pelo sacrifício. Um espírito que nunca quebrou.  
-        Silent Guardião não procura a glória — apenas a justiça. Move-se pelas sombras, age quando todos se calam.  
-        Ele não fala muito... mas quando o faz, cada palavra pesa como um trovão.</p>
-    </main>
-    <footer>
-        <p>&copy; 2025 Silent Guardião. Todos os direitos reservados.</p>
-    </footer>
+  <header>
+    <h1>Silent Guardião</h1>
+    <nav>
+      <a href="index.html">Início</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="opinioes.html">Opiniões</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="galeria.html">Galeria</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Quem é o Silent Guardião?</h1>
+      <p>
+        Um homem marcado pelo passado. Um corpo forjado pelo sacrifício.<br>
+        Um espírito que nunca quebrou.<br><br>
+        Silent Guardião não procura a glória — apenas a justiça.<br>
+        Move-se pelas sombras, age quando todos se calam.<br>
+        Ele não fala muito... mas quando o faz, cada palavra pesa como um trovão.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Silent Guardião. Todos os direitos reservados.
+  </footer>
 </body>
 </html>
