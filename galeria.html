@@ -8,12 +8,12 @@
     <style>
         .galeria {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
             padding: 40px;
             background-color: #111;
         }
-        .galeria img {
+        .galeria img, .galeria video {
             width: 100%;
             border-radius: 10px;
             border: 2px solid #333;
@@ -22,7 +22,7 @@
             text-align: center;
             color: #fff;
         }
-        .imagem {
+        .item {
             text-align: center;
             color: #ccc;
             font-size: 14px;
@@ -44,26 +44,37 @@
         <h2>Galeria Visual</h2>
         <div class="galeria">
 
-            <div class="imagem">
-                <img src="20250614_0347_Silent Guardião_simple_comp.png" alt="Imagem 1">
-                <p>Imagem 1</p>
+            <div class="item">
+                <img src="ChatGPT Image 14_06_2025, 03_52_14.png" alt="Poster oficial do Guardião">
+                <p>Poster oficial do Guardião</p>
             </div>
-    
-            <div class="imagem">
-                <img src="20250617_2136_Reflective Solitude_simple_comp.png" alt="Imagem 2">
-                <p>Imagem 2</p>
+        
+            <div class="item">
+                <img src="9cb97a77-915a-4f8c-8f31-cd0daaf07b11.png" alt="Reflexão na janela">
+                <p>Reflexão na janela</p>
             </div>
-    
-            <div class="imagem">
-                <img src="20250617_2136_Reflective Solitude_simple_comp (1).png" alt="Imagem 3">
-                <p>Imagem 3</p>
+        
+            <div class="item">
+                <img src="assets_task_01jxp3gb7gfkkbvk89wc690ja3_1749867394_img_1.jpg" alt="Guardião à espera no beco">
+                <p>Guardião à espera no beco</p>
             </div>
-    
-            <div class="imagem">
-                <img src="ChatGPT Image 14_06_2025, 03_52_14.png" alt="Imagem 4">
-                <p>Imagem 4</p>
+        
+            <div class="item">
+                <video controls>
+                    <source src="20250617_2136_Reflective Solitude_simple_compose_01jxzsq143e4ergah7tby909e7.mp4" type="video/mp4">
+                    O teu navegador não suporta este vídeo.
+                </video>
+                <p>Cena introspectiva 1</p>
             </div>
-    
+        
+            <div class="item">
+                <video controls>
+                    <source src="20250617_2136_Reflective Solitude_simple_compose_01jxzsq147erb8zaz9xwq569hy.mp4" type="video/mp4">
+                    O teu navegador não suporta este vídeo.
+                </video>
+                <p>Cena introspectiva 2</p>
+            </div>
+        
         </div>
     </main>
     <footer>
