@@ -1,0 +1,44 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #111;
+    color: #eee;
+}
+header {
+    background-color: #222;
+    padding: 20px;
+    text-align: center;
+}
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+header nav a {
+    margin: 0 10px;
+    color: #eee;
+    text-decoration: none;
+}
+header nav a:hover {
+    text-decoration: underline;
+}
+main {
+    padding: 40px;
+    text-align: center;
+}
+.botao {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #00aaff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+footer {
+    background-color: #222;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.8em;
+}
