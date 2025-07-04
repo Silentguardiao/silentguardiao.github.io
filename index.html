@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Silent Guardião</title>
   <style>
     * {
@@ -11,146 +11,126 @@
       box-sizing: border-box;
     }
 
-    body, html {
-      font-family: 'Segoe UI', sans-serif;
-      color: #fff;
+    body {
+      font-family: Arial, sans-serif;
       background-color: #000;
+      color: #fff;
     }
 
-    header {
+    nav {
       background-color: #000;
       padding: 10px 0;
       text-align: center;
     }
 
     nav a {
-      color: white;
-      margin: 0 15px;
+      color: #fff;
       text-decoration: none;
+      margin: 0 20px;
       font-weight: bold;
+      font-size: 18px;
     }
 
     .hero {
-      background-image: url("Guardião_simple.png");
+      background-image: url('guardiao.png'); /* Substitui pelo nome da imagem certa */
       background-size: cover;
-      background-position: center top;
+      background-position: center;
       height: 100vh;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 0 20px;
+      flex-direction: column;
+      padding: 20px;
     }
 
-    .hero h1 {
-      font-size: 42px;
-      margin-bottom: 15px;
-      text-shadow: 2px 2px 4px #000;
-    }
-
-    .hero p {
-      font-size: 18px;
-      font-style: italic;
-      max-width: 600px;
-      text-shadow: 1px 1px 2px #000;
-      margin: 5px 0;
-    }
-
-    .botao-comprar {
-      margin-top: 25px;
-      background-color: #fcd000;
-      color: #000;
-      padding: 12px 24px;
-      border: none;
+    .hero-content h1 {
+      font-size: 40px;
       font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .hero-content p {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .hero-content em {
       font-size: 16px;
-      border-radius: 5px;
-      cursor: pointer;
+      font-style: italic;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 20px;
+      background-color: #fdd835;
+      color: #000;
+      padding: 12px 25px;
+      font-weight: bold;
       text-decoration: none;
-      transition: background-color 0.3s;
+      border-radius: 6px;
+      transition: 0.3s;
     }
 
-    .botao-comprar:hover {
-      background-color: #e3b800;
+    .button:hover {
+      background-color: #ffeb3b;
     }
 
-    footer {
-      background-color: #111;
-      color: #ccc;
-      padding: 15px;
-      text-align: center;
-      font-size: 14px;
-    }
     @media (max-width: 768px) {
-  .hero {
-    background-size: cover;
-    background-position: top center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding-bottom: 140px;
-  }
+      .hero {
+        background-size: contain;
+        background-position: top center;
+        background-repeat: no-repeat;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding-bottom: 120px;
+      }
 
-  .hero h1 {
-    margin-top: -80px;
-    font-size: 28px;
-  }
+      .hero-content {
+        background: rgba(0, 0, 0, 0.5);
+        padding: 20px;
+        margin-top: auto;
+      }
 
-  .hero p {
-    font-size: 16px;
-    margin: 10px 20px;
-  }
-
-  .hero em {
-    font-size: 14px;
-    margin: 0 20px 20px;
-  }
-
-  .hero a.button {
-    font-size: 16px;
-    padding: 12px 24px;
-  }
-}
       .hero h1 {
-        font-size: 32px;
+        font-size: 26px;
+        margin-bottom: 10px;
       }
 
-      .hero p {
+      .hero p,
+      .hero em {
+        font-size: 15px;
+        margin: 5px 0;
+      }
+
+      .button {
         font-size: 16px;
-      }
-
-      .botao-comprar {
-        font-size: 14px;
-        padding: 10px 20px;
+        padding: 10px 22px;
+        margin-top: 15px;
       }
     }
   </style>
 </head>
 <body>
 
-<header>
   <nav>
-    <a href="index.html">Início</a>
-    <a href="sobre.html">Sobre</a>
-    <a href="opinioes.html">Opiniões</a>
-    <a href="contacto.html">Contacto</a>
-    <a href="galeria.html">Galeria</a>
+    <a href="#">Início</a>
+    <a href="#">Sobre</a>
+    <a href="#">Opiniões</a>
+    <a href="#">Contacto</a>
+    <a href="#">Galeria</a>
   </nav>
-</header>
 
-<section class="hero">
-  <h1>Silent Guardião</h1>
-  <p>O herói nasce no silêncio. Mas as sombras falam por ele.</p>
-  <p><em>"Entre a sombra e o silêncio... nasce a justiça."</em></p>
-  <a href="https://paypal.me/DominaInsonia?country.x=PT&locale.x=pt_PT" class="botao-comprar" target="_blank">Comprar o Livro</a>
-</section>
-
-<footer>
-  &copy; 2025 Silent Guardião. Todos os direitos reservados.
-</footer>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Silent Guardião</h1>
+      <p>O herói nasce no silêncio. Mas as sombras falam por ele.</p>
+      <em>"Entre a sombra e o silêncio... nasce a justiça."</em><br>
+      <a href="https://paypal.me/DominaInsonia?country.x=PT&locale.x=pt_PT" class="button">Comprar o Livro</a>
+    </div>
+  </section>
 
 </body>
 </html>
