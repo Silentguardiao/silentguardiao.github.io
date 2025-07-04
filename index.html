@@ -1,74 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Silent Guardião</title>
-  <link rel="stylesheet" href="style.css">
- <style>
-  body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: black;
-    color: white;
-  }
+  <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre&display=swap" rel="stylesheet">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: 'Averia Serif Libre', serif;
+      background-color: black;
+      color: white;
+    }
 
-  nav {
-    background-color: black;
-    text-align: center;
-    padding: 15px 0;
-  }
+    nav {
+      background-color: black;
+      text-align: center;
+      padding: 15px 0;
+    }
 
-  nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
-  }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
 
-  .hero {
-    background: url('Guardião_simple.png') no-repeat center top;
-    background-size: cover;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-    text-align: center;
-    color: white;
-    padding-bottom: 180px;
-  }
+    .hero {
+      background: url('Guardiao_simple.png') no-repeat center top;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      text-align: center;
+      padding-bottom: 180px;
+    }
 
-  .hero h1, .hero p {
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
-  }
+    .hero h1, .hero p {
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    }
 
-  .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
 
-  .hero p {
-    font-size: 1.2rem;
-    max-width: 80%;
-  }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 80%;
+    }
 
-  .intro {
-    background-color: #000;
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-  }
+    .botao-compra-wrapper {
+      margin-top: 30px;
+      text-align: center;
+    }
 
-  footer {
-    background-color: #111;
-    color: #aaa;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 0.9rem;
-  }
-</style>
+    .botao-compra {
+      display: inline-block;
+      padding: 12px 30px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: white;
+      border: 2px solid white;
+      background-color: transparent;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: all 0.3s ease-in-out;
+      backdrop-filter: blur(4px);
+    }
+
+    .botao-compra:hover {
+      background-color: white;
+      color: black;
+      border-color: white;
+    }
+
+    .intro {
+      background-color: #000;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    footer {
+      background-color: #111;
+      color: #aaa;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
 
@@ -84,15 +108,22 @@
     <h1>Silent Guardião</h1>
     <p>O herói nasce no silêncio. Mas as sombras falam por ele.</p>
     <p><em>"Entre a sombra e o silêncio... nasce a justiça."</em></p>
+
+    <!-- BOTÃO COMPRAR -->
+    <div class="botao-compra-wrapper">
+      <a href="https://www.paypal.me/silentguardiao/12" class="botao-compra" target="_blank">
+        Comprar Livro – 12€
+      </a>
+    </div>
   </section>
 
-  <section class="intro">
+  <div class="intro">
     <h2>Bem-vindo ao universo do Guardião</h2>
-    <p>Este é o espaço oficial do livro <strong>Silent Guardião</strong>. Aqui podes conhecer a história, partilhar a tua opinião e adquirir o livro.</p>
-  </section>
+    <p>Explora os bastidores do livro, vê a galeria visual e partilha a tua opinião.</p>
+  </div>
 
   <footer>
-    &copy; 2025 Silent Guardião. Todos os direitos reservados.
+    © 2025 Silent Guardião. Todos os direitos reservados.
   </footer>
 
 </body>
