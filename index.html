@@ -1,112 +1,80 @@
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-  <meta charset="UTF-8">
-  <title>Silent Guardião</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
+/* Estilo geral */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #000;
+  color: white;
+}
 
-    nav {
-      background-color: black;
-      padding: 10px 0;
-      text-align: center;
-    }
+/* Navegação */
+nav {
+  background-color: #000;
+  padding: 10px;
+  text-align: center;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
+/* Hero section */
+.hero {
+  min-height: 100vh;
+  background: url('Guardião_simple.png') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  padding-bottom: 120px;
+  text-align: center;
+  box-sizing: border-box;
+  text-shadow: 2px 2px 5px #000;
+}
 
-    .hero {
-      .hero {min-height: 100vh;
-      background: url('Guardião_simple.png') no-repeat center center;
-      background-size: cover;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-shadow: 2px 2px 5px #000;
-      padding: 20px;
-      box-sizing: border-box;
-    }
+/* Conteúdo dentro da imagem */
+.hero-content h1 {
+  font-size: 3em;
+  margin: 0;
+}
+.hero-content p {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
 
-    .hero h1 {
-      font-size: 48px;
-      margin: 10px 0;
-    }
+/* Botão de compra */
+.buy-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 24px;
+  background-color: #ffd700;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  box-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  transition: background-color 0.3s ease;
+}
+.buy-button:hover {
+  background-color: #e6c200;
+}
 
-    .hero p {
-      font-size: 18px;
-      font-style: italic;
-      margin: 5px 0 20px 0;
-      max-width: 600px;
-      text-align: center;
-    }
-
-    .buy-button {
-      background-color: #FFD700;
-      color: black;
-      padding: 12px 24px;
-      border: none;
-      border-radius: 5px;
-      font-size: 18px;
-      cursor: pointer;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-      transition: background-color 0.3s ease;
-    }
-
-    .buy-button:hover {
-      background-color: #e6c200;
-    }
-
-    footer {
-      background-color: #111;
-      color: white;
-      text-align: center;
-      padding: 30px 20px;
-    }
-
-    footer strong {
-      color: #fff;
-    }
-  </style>
-</head>
-<body>
-
-  <nav>
-    <a href="index.html">Início</a>
-    <a href="sobre.html">Sobre</a>
-    <a href="opinioes.html">Opiniões</a>
-    <a href="contacto.html">Contacto</a>
-    <a href="galeria.html">Galeria</a>
-  </nav>
-
-  <div class="hero">
-    <h1>Silent Guardião</h1>
-    <p>O herói nasce no silêncio. Mas as sombras falam por ele.</p>
-    <p>"Entre a sombra e o silêncio... nasce a justiça."</p>
-
-    <!-- Botão de Compra -->
-    <a href="https://www.paypal.com/paypalme/SEUNOME" target="_blank" class="buy-button">
-      Comprar o Livro
-    </a>
-  </div>
-
-  <footer>
-    <h3>Bem-vindo ao universo do Guardião</h3>
-    <p>Este é o espaço oficial do livro <strong>Silent Guardião</strong>. Aqui podes conhecer a história, partilhar a tua opinião e adquirir o livro.</p>
-    <p style="margin-top: 20px;">© 2025 Silent Guardião. Todos os direitos reservados.</p>
-  </footer>
-
-</body>
-</html>
+/* Rodapé */
+footer {
+  background-color: #111;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
