@@ -1,46 +1,86 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Silent Guardião</title>
-  <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Averia Serif Libre', serif;
       background: url('9cb97a77-915a-4f8c-8f31-cd0daaaf07b11.png') no-repeat center center fixed;
       background-size: cover;
+      font-family: 'Averia Serif Libre', serif;
       color: #fff;
-    }
-
-    header, .content {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 40px;
       text-align: center;
     }
 
-    h1 {
-      font-size: 3em;
-      margin: 0;
+    nav {
+      background-color: rgba(0, 0, 0, 0.85);
+      padding: 10px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 10;
     }
 
-    p {
-      font-size: 1.2em;
-      margin-top: 10px;
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      padding-top: 120px;
+      padding-bottom: 60px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin: 5px auto;
+    }
+
+    .content {
+      background-color: #000;
+      color: white;
+      padding: 60px 20px;
+    }
+
+    footer {
+      background-color: #111;
+      color: #999;
+      font-size: 14px;
+      padding: 20px 0;
     }
   </style>
 </head>
 <body>
-  <header>
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="opinioes.html">Opiniões</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="galeria.html">Galeria</a>
+  </nav>
+
+  <div class="hero">
     <h1>Silent Guardião</h1>
-    <p>O herói nasce no silêncio. Mas as sombras falam por ele.</p>
-    <p><em>"Entre a sombra e o silêncio... nasce a justiça."</em></p>
-  </header>
+    <p><em>O herói nasce no silêncio. Mas as sombras falam por ele.</em></p>
+    <p>"Entre a sombra e o silêncio... nasce a justiça."</p>
+  </div>
 
   <div class="content">
     <h2>Bem-vindo ao universo do Guardião</h2>
-    <p>Este é o espaço oficial do livro <strong>Silent Guardião</strong>. Aqui podes conhecer a história, partilhar a tua opinião e explorar o mundo do Guardião.</p>
+    <p>Este é o espaço oficial do livro <strong>Silent Guardião</strong>. Aqui podes conhecer a história, partilhar a tua opinião e adquirir o livro.</p>
   </div>
+
+  <footer>
+    &copy; 2025 Silent Guardião. Todos os direitos reservados.
+  </footer>
 </body>
 </html>
