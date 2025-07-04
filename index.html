@@ -4,23 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Silent Guardião</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
   <style>
-    body {
+    body, html {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      color: white;
+      padding: 0;
+      font-family: Arial, sans-serif;
       background-color: black;
+      color: white;
     }
 
-    header {
-      background-color: rgba(0, 0, 0, 0.8);
-      padding: 1rem 0;
+    nav {
+      background-color: black;
       text-align: center;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 10;
+      padding: 15px 0;
     }
 
     nav a {
@@ -31,7 +28,7 @@
     }
 
     .hero {
-      background: url('20250614_0347_Silent%20Guardião_simple_compose_01jxp5b4hex5rvn7km0pnw5r3.png') no-repeat center center;
+      background: url('Guardião_simple.png') no-repeat center center;
       background-size: cover;
       height: 100vh;
       display: flex;
@@ -39,46 +36,44 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 0 20px;
+      color: white;
     }
 
     .hero h1 {
-      font-size: 3.5rem;
+      font-size: 3rem;
       margin-bottom: 1rem;
-      text-shadow: 2px 2px 6px black;
     }
 
     .hero p {
-      font-style: italic;
-      font-size: 1.4rem;
-      text-shadow: 1px 1px 4px black;
+      font-size: 1.2rem;
+      max-width: 80%;
     }
 
-    .content {
+    .intro {
       background-color: #000;
+      color: white;
       padding: 40px 20px;
       text-align: center;
     }
 
     footer {
       background-color: #111;
-      color: #ccc;
+      color: #aaa;
       text-align: center;
-      padding: 15px;
+      padding: 10px 0;
       font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="index.html">Início</a>
-      <a href="sobre.html">Sobre</a>
-      <a href="opinioes.html">Opiniões</a>
-      <a href="contacto.html">Contacto</a>
-      <a href="galeria.html">Galeria</a>
-    </nav>
-  </header>
+
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="opinioes.html">Opiniões</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="galeria.html">Galeria</a>
+  </nav>
 
   <section class="hero">
     <h1>Silent Guardião</h1>
@@ -86,13 +81,14 @@
     <p><em>"Entre a sombra e o silêncio... nasce a justiça."</em></p>
   </section>
 
-  <section class="content">
+  <section class="intro">
     <h2>Bem-vindo ao universo do Guardião</h2>
     <p>Este é o espaço oficial do livro <strong>Silent Guardião</strong>. Aqui podes conhecer a história, partilhar a tua opinião e adquirir o livro.</p>
   </section>
 
   <footer>
-    © 2025 Silent Guardião. Todos os direitos reservados.
+    &copy; 2025 Silent Guardião. Todos os direitos reservados.
   </footer>
+
 </body>
 </html>
