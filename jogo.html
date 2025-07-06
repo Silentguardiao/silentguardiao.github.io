@@ -3,65 +3,138 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Silent Guardião - Jogo</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Silent Guardião - RPG</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #111;
+      color: #eee;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      background-color: #000;
+      width: 100%;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    header a {
+      color: #9f73ff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    header a:hover {
+      color: #fff;
+    }
+
+    .chat-box {
+      margin-top: 40px;
+      width: 80%;
+      max-width: 600px;
+      background-color: #1b1b1b;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+    }
+
+    .chat-log {
+      height: 300px;
+      overflow-y: auto;
+      background-color: #111;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .chat-log p {
+      margin: 6px 0;
+    }
+
+    .intro {
+      font-style: italic;
+      text-align: center;
+      margin-bottom: 10px;
+      color: #aaa;
+    }
+
+    .form {
+      display: flex;
+      gap: 5px;
+    }
+
+    input[type="text"] {
+      flex: 1;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      background-color: #333;
+      color: white;
+    }
+
+    button {
+      background-color: #9f73ff;
+      border: none;
+      padding: 10px 15px;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #7c50ff;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Silent Guardião - RPG</h1>
-    <nav>
-      <a href="index.html">Início</a>
-      <a href="sobre.html">Sobre</a>
-      <a href="opinioes.html">Opiniões</a>
-      <a href="contacto.html">Contacto</a>
-      <a href="galeria.html">Galeria</a>
-      <a href="jogo.html" class="active">Jogo</a>
-    </nav>
+    <a href="index.html">Início</a>
+    <a href="sobre.html">Sobre</a>
+    <a href="opinioes.html">Opiniões</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="galeria.html">Galeria</a>
+    <a href="jogo.html">Jogo</a>
   </header>
 
-  <main>
-    <section>
-      <h2>Cria o teu Personagem</h2>
-      <form id="registo-personagem">
-        <label for="nome">Nome do Personagem:</label>
-        <input type="text" id="nome" name="nome" required />
-
-        <label for="classe">Classe:</label>
-        <select id="classe" name="classe">
-          <option>Guardião</option>
-          <option>Sombrio</option>
-          <option>Místico</option>
-        </select>
-
-        <button type="submit">Entrar no Mundo</button>
-      </form>
-    </section>
-
-    <section id="chat" style="display: none;">
-      <h2>Chat do Mundo</h2>
-      <div id="chatbox" style="height: 200px; background: #111; color: #fff; padding: 10px; overflow-y: scroll;">
-        <p><em>Bem-vindo ao universo do Guardião...</em></p>
-      </div>
-      <input type="text" id="mensagem" placeholder="Escreve a tua mensagem..." />
+  <div class="chat-box">
+    <div class="intro">Bem-vindo ao universo do Guardião...</div>
+    <div class="chat-log" id="chat-log">
+      <p><strong>GuardiaoBot:</strong> Quem ousa entrar neste mundo?</p>
+    </div>
+    <div class="form">
+      <input type="text" id="mensagem" placeholder="Escreve a tua mensagem...">
       <button onclick="enviarMensagem()">Enviar</button>
-    </section>
-  </main>
+    </div>
+  </div>
 
   <script>
-    document.getElementById('registo-personagem').addEventListener('submit', function (e) {
-      e.preventDefault();
-      document.querySelector('#chat').style.display = 'block';
-      document.querySelector('#registo-personagem').style.display = 'none';
-    });
-
     function enviarMensagem() {
-      const msg = document.getElementById('mensagem').value;
-      if (msg.trim() === '') return;
-      const chatbox = document.getElementById('chatbox');
-      const nome = document.getElementById('nome').value;
-      chatbox.innerHTML += `<p><strong>${nome}</strong>: ${msg}</p>`;
-      document.getElementById('mensagem').value = '';
-      chatbox.scrollTop = chatbox.scrollHeight;
+      const input = document.getElementById('mensagem');
+      const texto = input.value.trim();
+      if (texto === '') return;
+
+      const log = document.getElementById('chat-log');
+      const novaMensagem = document.createElement('p');
+      novaMensagem.innerHTML = `<strong>Nuno Silva:</strong> ${texto}`;
+      log.appendChild(novaMensagem);
+
+      input.value = '';
+      log.scrollTop = log.scrollHeight;
+
+      setTimeout(() => {
+        const resposta = document.createElement('p');
+        resposta.innerHTML = `<strong>GuardiaoBot:</strong> Interessante... continua.`;
+        log.appendChild(resposta);
+        log.scrollTop = log.scrollHeight;
+      }, 1000);
     }
   </script>
 </body>
