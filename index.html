@@ -2,122 +2,22 @@
 <html lang="pt">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Silent Guardião</title>
-  <meta name="description" content="Livro Silent Guardião – uma história de resiliência, silêncio e justiça. Descobre o herói que protege nas sombras.">
-  <meta name="keywords" content="livro, Silent Guardião, superação, herói, justiça, romance, drama, guarda, vigilante">
-  <meta name="author" content="Nuno Filipe">
-  <meta name="robots" content="index, follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RPG Silent Guardião</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body, html {
-      font-family: 'Segoe UI', sans-serif;
-      color: #fff;
-      background-color: #000;
-    }
-
-    header {
-      background-color: #000;
-      padding: 10px 0;
-      text-align: center;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-.hero {
-  background-image: url("capa de livro.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-color: #000;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  text-align: center;
-  padding-top: 160px;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-.hero h1,
-.hero p,
-.botao-comprar {
-  background-color: rgba(0, 0, 0, 0.6); /* fundo escuro transparente para melhor leitura */
-  padding: 10px;
-  border-radius: 8px;
-}
-
-    .hero h1 {
-      font-size: 42px;
-      margin-bottom: 15px;
-      text-shadow: 2px 2px 4px #000;
-    }
-
-    .hero p {
-      font-size: 18px;
-      font-style: italic;
-      max-width: 600px;
-      text-shadow: 1px 1px 2px #000;
-      margin: 5px 0;
-    }
-
-    .botao-comprar {
-      margin-top: 25px;
-      background-color: #fcd000;
-      color: #000;
-      padding: 12px 24px;
-      border: none;
-      font-weight: bold;
-      font-size: 16px;
-      border-radius: 5px;
-      cursor: pointer;
-      text-decoration: none;
-      transition: background-color 0.3s;
-    }
-
-    .botao-comprar:hover {
-      background-color: #e3b800;
-    }
-
-    footer {
-      background-color: #111;
-      color: #ccc;
-      padding: 15px;
-      text-align: center;
-      font-size: 14px;
-    }
-
-    @media (max-width: 768px) {
-      .hero {
-        justify-content: flex-end;
-        padding-bottom: 120px;
-      }
-
-      .hero h1 {
-        font-size: 32px;
-      }
-
-      .hero p {
-        font-size: 16px;
-      }
-
-      .botao-comprar {
-        font-size: 14px;
-        padding: 10px 20px;
-      }
-    }
+    .game-wrap     { max-width:800px;margin:60px auto;color:#fff;text-align:center }
+    #chat-box      { height:300px;overflow-y:auto;border:1px solid #444;padding:10px;margin-bottom:15px }
+    .msg           { text-align:left;margin:4px 0 }
+    .msg.you       { color:#0af }
+    #send-area     { display:flex;gap:6px }
+    #send-area input{ flex:1;padding:8px;background:#222;border:1px solid #444;color:#fff }
+    #send-area button{ padding:8px 14px;background:#fcd000;border:none;font-weight:bold;cursor:pointer }
   </style>
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js"></script>
 </head>
 <body>
 
@@ -128,19 +28,107 @@
     <a href="opinioes.html">Opiniões</a>
     <a href="contacto.html">Contacto</a>
     <a href="galeria.html">Galeria</a>
+    <a href="jogo.html">Jogo</a>
   </nav>
 </header>
 
-<section class="hero">
-  <h1>Silent Guardião</h1>
-  <p>O herói nasce no silêncio. Mas as sombras falam por ele.</p>
-  <p><em>"Entre a sombra e o silêncio... nasce a justiça."</em></p>
-  <a href="https://paypal.me/DominaInsonia?country.x=PT&locale.x=pt_PT" class="botao-comprar" target="_blank">Comprar o Livro</a>
+<section class="game-wrap">
+  <h1>Bem-vindo ao Salão do Guardião</h1>
+
+  <!-- Criação / escolha de personagem -->
+  <div id="char-setup">
+    <p>Escolhe o teu nome de Guardião:</p>
+    <input id="char-name" placeholder="Ex.: Falcão-Sombrio" />
+    <button id="enter-btn">Entrar no Jogo</button>
+  </div>
+
+  <!-- Chat principal -->
+  <div id="chat-area" style="display:none">
+    <h2 id="welcome"></h2>
+    <div id="chat-box"></div>
+
+    <div id="send-area">
+      <input id="msg-input" placeholder="Escreve a tua mensagem..." />
+      <button id="send-btn">Enviar</button>
+    </div>
+  </div>
 </section>
 
-<footer>
-  &copy; 2025 Silent Guardião. Todos os direitos reservados.
-</footer>
+<footer>&copy; 2025 Silent Guardião. Todos os direitos reservados.</footer>
 
+<script type="module">
+  /* ---------- 1.  Inicializar Firebase ---------- */
+  import { initializeApp }   from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { getAuth, signInAnonymously } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+  import {
+    getFirestore, collection, addDoc,
+    query, orderBy, onSnapshot, serverTimestamp
+  } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+  // <-  COLA aqui as TUAS credenciais  ---------------------------------------
+  const firebaseConfig = {/* TODO: FIREBASE CONFIG */};
+  // -------------------------------------------------------------------------
+  const app  = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db   = getFirestore(app);
+
+  /* ---------- 2.  Estado local ---------- */
+  let currentUser  = null;     // UID do Firebase
+  let character    = "";       // Nome escolhido
+  const colMsgs    = collection(db, "mensagens");
+
+  /* ---------- 3.  Entrar anonimamente ---------- */
+  signInAnonymously(auth).then(cred => {
+      currentUser = cred.user.uid;
+  }).catch(err => alert("Erro Auth: "+err.message));
+
+  /* ---------- 4.  DOM ---------- */
+  const setupDiv   = document.getElementById("char-setup");
+  const chatDiv    = document.getElementById("chat-area");
+  const charInput  = document.getElementById("char-name");
+  const enterBtn   = document.getElementById("enter-btn");
+  const welcomeH2  = document.getElementById("welcome");
+  const box        = document.getElementById("chat-box");
+  const msgIn      = document.getElementById("msg-input");
+  const sendBtn    = document.getElementById("send-btn");
+
+  enterBtn.onclick = () => {
+    const name = charInput.value.trim();
+    if(!name) return alert("Escolhe um nome!");
+    character = name;
+    setupDiv.style.display = "none";
+    chatDiv.style.display  = "block";
+    welcomeH2.textContent  = `Saudações, ${character}!`;
+    msgIn.focus();
+  };
+
+  /* ---------- 5.  Enviar mensagem ---------- */
+  async function sendMsg() {
+    const text = msgIn.value.trim();
+    if(!text) return;
+    await addDoc(colMsgs, {
+      uid:       currentUser,
+      name:      character,
+      text,
+      createdAt: serverTimestamp()
+    });
+    msgIn.value = "";
+  }
+  sendBtn.onclick = sendMsg;
+  msgIn.addEventListener("keydown", e => { if(e.key==="Enter") sendMsg(); });
+
+  /* ---------- 6.  Ouvir mensagens em tempo-real ---------- */
+  onSnapshot(query(colMsgs, orderBy("createdAt","asc")), snap => {
+    box.innerHTML = "";
+    snap.forEach(doc => {
+      const {uid, name, text} = doc.data();
+      const div = document.createElement("div");
+      div.className = "msg"+(uid===currentUser?" you":"");
+      div.textContent = `${name}: ${text}`;
+      box.appendChild(div);
+    });
+    box.scrollTop = box.scrollHeight;
+  });
+</script>
 </body>
 </html>
